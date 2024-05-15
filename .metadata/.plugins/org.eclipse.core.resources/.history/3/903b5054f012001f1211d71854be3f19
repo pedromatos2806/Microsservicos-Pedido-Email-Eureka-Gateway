@@ -2,7 +2,7 @@ spring.application.name=pedidoms
 
 spring.jpa.properties.hibernate.jdbc.lob.non_contextetual_creation=true
 
-# Data Source PostgreSQL
+#Data Source PostgreSQL
 spring.datasource.url=jdbc:postgresql://localhost:5432/produtos-apirest
 spring.datasource.username=postgres
 spring.datasource.password=alunoifba
@@ -11,11 +11,8 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.show-sql=true
 
-# Eureka Client
+#Eureka Client
 
 eureka.client.serviceUrl.defaultZone=http://localhost:8081/eureka
 server.port=0
 eureka.instance.prefer-ip-address=true
-
-# Serve Properties
-server.error.include-stacktrace=never
