@@ -14,7 +14,7 @@ spring.jpa.show-sql=true
 #mail
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
-spring.mail.username=****coloqueSeuEmailAqui@gmail.com***
+spring.mail.username=coloqueSeuEmailaqui@gmail.com
 spring.mail.password=****coloque a senha do app gmail aqui***
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
