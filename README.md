@@ -8,7 +8,7 @@ Nesse caminho mostrado abaixo! ↘️
 <strong>oB.: Para que os microsserviços funcionem de forma correta é necessário rodar primeiro a aplicação do eureka e logo em seguida rodar as outras aplicações.</strong>
 
 Para acessar o Eureka Server: 
-http://localhost:8081/
+#### `http://localhost:8081/`
 
 
 Para acessar o Swagger das API'S:
