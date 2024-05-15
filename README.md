@@ -7,7 +7,7 @@ Nesse caminho mostrado abaixo! ↘️
 
 <strong>oB.: Para que os microsserviços funcionem de forma correta é necessário rodar primeiro a aplicação do eureka e logo em seguida rodar as outras aplicações.</strong>
 
-Para acessar o Eureka Server: 
+Para acessar o <b>Eureka Server</b>: 
 #### `http://localhost:8081/`
 
 
