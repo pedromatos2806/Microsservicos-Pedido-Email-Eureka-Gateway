@@ -2,7 +2,7 @@
 
 
 Antes de colocar pra rodar a aplicação é necessario configurar o application properties da aplicação emailservice/emailservice.
-Nesse caminho mostrado abaixo! ⬇↘️
+Nesse caminho mostrado abaixo! ↘️
 ![image](https://github.com/pedromatos2806/Microsservicos-SpringBoot-Pedido-Email-Eureka-Gateway/assets/112106104/2af5cdb4-8888-41ff-82cf-7866a25e6b39)
 
 <strong>oB.: Para que os microsserviços funcionem de forma correta é necessário rodar primeiro a aplicação do eureka e logo em seguida rodar as outras aplicações.</strong>
