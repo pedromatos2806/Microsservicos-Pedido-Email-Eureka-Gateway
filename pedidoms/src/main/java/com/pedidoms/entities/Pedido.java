@@ -16,13 +16,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity(name = "pedidos")
+@EqualsAndHashCode(of = "id")
 public class Pedido {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pedido_id", unique = true, nullable = false)
@@ -35,7 +38,7 @@ public class Pedido {
 	@JoinTable(name = "itens_pedidos"
 				, joinColumns = @JoinColumn(name = "pedido_id")
 				, inverseJoinColumns = @JoinColumn(name = "item_id"))
-	private List<ItemPedido> itens = new ArrayList<>();
+	private List<Item> itens = new ArrayList<>();
 
 	private Long idCliente;
 

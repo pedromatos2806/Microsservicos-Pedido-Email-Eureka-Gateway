@@ -15,6 +15,8 @@ import com.services.emailservice.entities.Email;
 import com.services.emailservice.enums.EmailStatus;
 import com.services.emailservice.repositories.EmailRepository;
 
+import jakarta.validation.Valid;
+
 @Service
 public class EmailService {
 	
@@ -31,7 +33,7 @@ public class EmailService {
 		return emailsDto;
 	}
 	
-	public Email sendEmail(EmailDto dto) {
+	public Email sendEmail(@Valid EmailDto dto) {
 		Email data = new Email(dto);
 		data.setSendDateEmail(LocalDateTime.now());
 		SimpleMailMessage message = new SimpleMailMessage();

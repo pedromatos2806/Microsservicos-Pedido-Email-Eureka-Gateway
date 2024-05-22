@@ -3,6 +3,8 @@ package com.pedidoms.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,25 +29,26 @@ public class ClienteController {
 	ClienteService clienteService;
 
 	@Operation(description = "Consulta todos os clientes")
-	@ApiResponse(description = "traz uma lista de ClienteDto")
+	@ApiResponse(description = "traz um Page de ClienteDto")
 	@GetMapping
-	public List<ClienteDto> consultarClientes() {
-		return clienteService.consultarClientes();
+	public Page<ClienteDto> consultarClientes(Pageable pag) {
+		return clienteService.consultarClientes(pag);
 	}
 
 	@Operation(description = "Consulta todos os clientes por nome")
-	@ApiResponse(description = "traz uma lista de ClienteDto")
+	@ApiResponse(description = "traz um ResponseEntity da Lista de ClienteDto")
 	@GetMapping(value = "/byNome/{nome}")
-	public List<ClienteDto> consultarCliente(@PathVariable String nome) {
+	public ResponseEntity<List<ClienteDto>> consultarCliente(@PathVariable String nome) {
 		return clienteService.consultarCliente(nome);
 	}
 
-	@Operation(description = "Consulta todos os clientes por id")
+	@Operation(description = "Consulta o cliente por id")
+	@ApiResponse(description = "traz um ResponseEntity de ClienteDto")
 	@GetMapping(value = "/byId/{id}")
-	public ClienteDto consultarCliente(@PathVariable Long id) {
+	public ResponseEntity<ClienteDto> consultarCliente(@PathVariable Long id) {
 		return clienteService.consultarCliente(id);
 	}
-
+	
 	@Operation(description = "Atualiza um cliente já existente")
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Retorna o ClienteDto"),
 			@ApiResponse(responseCode = "400", description = "não há nenhum cliente com o id solicitado") })
