@@ -4,6 +4,8 @@
     :construction:  Projeto em construção  :construction:
 </h3>
 
+![eureka](https://github.com/pedromatos2806/Microsservicos-SpringBoot-Pedido-Email-Eureka-Gateway/assets/112106104/d7959c40-56e4-4ea3-b142-c07ec1ea24a4)
+
 Antes de colocar pra rodar a aplicação é necessario configurar o application properties da aplicação emailservice/emailservice.
 Nesse caminho mostrado abaixo! ↘️
 ![image](https://github.com/pedromatos2806/Microsservicos-SpringBoot-Pedido-Email-Eureka-Gateway/assets/112106104/2af5cdb4-8888-41ff-82cf-7866a25e6b39)
