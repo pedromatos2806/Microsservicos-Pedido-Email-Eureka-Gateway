@@ -2,11 +2,9 @@ package com.pedidoms.dtos;
 
 import com.pedidoms.entities.Item;
 
-import jakarta.validation.constraints.NotBlank;
+public record ItemDto(String nome) {
 
-public record ItemDto(@NotBlank String nome) {
-
-	 public ItemDto(Item item) {
-		 this(item.getNome());
+	public ItemDto(Item item) {
+		this(item.getNome());
 	}
 }

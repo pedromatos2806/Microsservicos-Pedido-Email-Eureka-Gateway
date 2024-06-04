@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\pedro\Documents\Projetos\Microsservicos-SpringBoot-Pedido-Email-Eureka-Gateway"/>
 			<item value="C:\Users\pedro\Desktop\microsservices-spring"/>
 		</list>
 		<list key="projectNameTemplate">

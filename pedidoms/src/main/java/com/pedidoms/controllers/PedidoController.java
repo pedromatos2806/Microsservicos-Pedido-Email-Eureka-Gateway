@@ -24,35 +24,35 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 @RestController
 @RequestMapping(value = "/pedido")
 public class PedidoController {
-	
+
 	@Autowired
 	PedidoService pedidoService;
-	
+
 	@Operation(description = "Lista todos os pedidos")
 	@ApiResponse(description = "traz uma Page de PedidoDto")
 	@GetMapping
-	public Page<PedidoDto> listarPedidos(Pageable pag){
+	public Page<PedidoDto> listarPedidos(Pageable pag) {
 		return pedidoService.listarPedidos(pag);
 	}
-	
+
 	@Operation(description = "Lista os pedidos de um determinado cliente passando o id do Cliente")
 	@ApiResponse(description = "traz uma Lista de PedidoDto")
-	@GetMapping(value="/{id}")
-	public ResponseEntity<List<PedidoDto>> listarPedidosDoCliente(@PathVariable Long idCliente){
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<List<PedidoDto>> listarPedidosDoCliente(@PathVariable Long idCliente) {
 		return pedidoService.listarPedidosDoCliente(idCliente);
 	}
-	
+
 	@Operation(description = "Atualiza um pedido passando um Status e o id do Pedido")
 	@ApiResponse(description = "traz uma ResponseEntity do PedidoDto")
-	@PutMapping(value="/{status}")
-	public ResponseEntity<PedidoDto> atualizarStatus(@PathVariable StatusPedido status, @RequestBody Long idPedido){
+	@PutMapping(value = "/{status}")
+	public ResponseEntity<PedidoDto> atualizarStatus(@PathVariable StatusPedido status, @RequestBody Long idPedido) {
 		return pedidoService.atualizarStatus(status, idPedido);
 	}
-	
+
 	@Operation(description = "Cria um pedido passando um PedidoDto")
 	@ApiResponse(description = "traz uma ResponseEntity do PedidoDto")
 	@PostMapping
-	public ResponseEntity<PedidoDto> criarPedido(@RequestBody PedidoDto dto){
+	public ResponseEntity<PedidoDto> criarPedido(@RequestBody PedidoDto dto) {
 		return pedidoService.criarPedido(dto);
 	}
 }
