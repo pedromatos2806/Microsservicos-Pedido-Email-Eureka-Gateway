@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="com.pedidoms.repositories.PedidoRepository"/>
+    <fullyQualifiedTypeName name="com.pedidoms.services.ItemService"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="com.pedidoms.validacoes.ValidacaoException"/>
+    <fullyQualifiedTypeName name="com.netflix.discovery.converters.Auto"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.pedidoms.services.validation.ItemValidation"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.pedidoms.services.UtilService"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="com.pedidoms.repositories.ItemRepository"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="io.swagger.v3.oas.annotations.Operation"/>
+    <fullyQualifiedTypeName name="io.swagger.v3.oas.annotations.responses.ApiResponse"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="lombok.EqualsAndHashCode"/>
+    <fullyQualifiedTypeName name="com.pedidoms.entities.Item"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.CascadeType"/>
+</qualifiedTypeNameHistroy>

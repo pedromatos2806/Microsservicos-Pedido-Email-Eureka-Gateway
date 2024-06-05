@@ -36,7 +36,6 @@ public class ItemService {
 
 	public ResponseEntity<ItemDto> adicionarItem(ItemDto itemDto) {
 		Item item = new Item(itemDto);
-		System.out.println(item);
 //		List<Item> itemBuscado = itemRepository.findByNome(itemDto.nome());
 //		System.out.println(itemBuscado);
 //		if (itemBuscado != null)

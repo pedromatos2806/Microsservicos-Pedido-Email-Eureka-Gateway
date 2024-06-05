@@ -38,4 +38,10 @@ public class Item {
 			this.ativo = true;
 	}
 
+	public Item(String nome) {
+		this.setNome(nome);
+		if (this.ativo == null)
+			this.ativo = true;
+	}
+
 }

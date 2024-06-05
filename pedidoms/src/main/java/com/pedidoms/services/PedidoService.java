@@ -58,7 +58,7 @@ public class PedidoService {
 	}
 
 	public ResponseEntity<PedidoDto> criarPedido(@Valid PedidoDto pedidoDto) {
-		verificarNomesItens(pedidoDto.nomesDosItens());
+		// verificarNomesItens(pedidoDto.nomesDosItens());
 
 		Pedido pedido = new Pedido(pedidoDto);
 

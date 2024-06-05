@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.pedidoms.dtos.PedidoDto;
 import com.pedidoms.enums.StatusPedido;
-import com.pedidoms.services.UtilService;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -36,7 +36,7 @@ public class Pedido {
 	@Enumerated(EnumType.STRING)
 	private StatusPedido status;
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "itens_pedidos", joinColumns = @JoinColumn(name = "PEDIDO_ID"), inverseJoinColumns = @JoinColumn(name = "ITEM_ID"))
 	private List<Item> itens = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class Pedido {
 
 	public Pedido(PedidoDto dto) {
 		setStatus(dto.status());
-		setItens(UtilService.copyProperties(dto.nomesDosItens()));
+		setItens(dto.nomesDosItens().stream().map(nome -> new Item(nome)).toList());
 		setIdCliente(dto.idCliente());
 		if (getData() == null)
 			setData(LocalDateTime.now());
