@@ -52,8 +52,8 @@ public class ClienteController {
 	@Operation(description = "Atualiza um cliente já existente")
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Retorna o ClienteDto"),
 			@ApiResponse(responseCode = "400", description = "não há nenhum cliente com o id solicitado") })
-	@PutMapping
-	public ResponseEntity<ClienteDto> atualizarCliente(@RequestBody Long id, @RequestBody ClienteDto clienteDto) {
+	@PutMapping(value = "/{id}" )
+	public ResponseEntity<ClienteDto> atualizarCliente(@PathVariable Long id, @RequestBody ClienteDto clienteDto) {
 		return clienteService.atualizarCliente(id, clienteDto);
 	}
 

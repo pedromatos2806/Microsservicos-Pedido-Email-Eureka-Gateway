@@ -1,7 +1,6 @@
 package com.pedidoms.services;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -37,11 +36,15 @@ public class ClienteService {
 	public ResponseEntity<ClienteDto> atualizarCliente(Long id, @Valid ClienteDto clienteDto) {
 		var clienteOp = clienteRepository.findById(id);
 		if (!clienteOp.isPresent())
-			ResponseEntity.notFound().build();
-		var cliente = clienteOp.get();
-		ClienteDto clienteDtoAtualizado = new ClienteDto(cliente);
+			return ResponseEntity.notFound().build();
+		Cliente clienteBuscado = clienteOp.get();
 
-		return ResponseEntity.ok(clienteDtoAtualizado);
+		clienteBuscado.setEmail(clienteDto.email());
+		clienteBuscado.setNome(clienteDto.nome());
+		clienteRepository.save(clienteBuscado);
+
+		ClienteDto clienteModificadoDto = new ClienteDto(clienteBuscado);
+		return ResponseEntity.ok(clienteModificadoDto);
 	}
 
 	public Page<ClienteDto> consultarClientes(Pageable pag) {
@@ -54,13 +57,13 @@ public class ClienteService {
 			ResponseEntity.notFound().build();
 
 		return ResponseEntity
-				.ok(clienteRepository.findAllByNome(nome).stream().map(ClienteDto::new).collect(Collectors.toList()));
+				.ok(clienteRepository.findAllByNome(nome).stream().map(ClienteDto::new).toList());
 	}
 
 	public ResponseEntity<ClienteDto> consultarCliente(Long id) {
 		var clienteOp = clienteRepository.findById(id);
 		if (!clienteOp.isPresent())
-			ResponseEntity.notFound().build();
+			return ResponseEntity.notFound().build();
 		var cliente = clienteOp.get();
 
 		ClienteDto clienteDto = new ClienteDto(cliente);
