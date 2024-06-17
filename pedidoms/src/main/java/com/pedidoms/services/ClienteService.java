@@ -14,6 +14,7 @@ import com.pedidoms.dtos.ClienteDto;
 import com.pedidoms.entities.Cliente;
 import com.pedidoms.repositories.ClienteRepository;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
 @Service
@@ -24,7 +25,8 @@ public class ClienteService {
 
 	@Autowired
 	EmailClient emailClient;
-
+	
+	@Transactional
 	public ResponseEntity<ClienteDto> criarCliente(@Valid ClienteDto clienteDto) {
 		Cliente cliente = new Cliente(clienteDto);
 		clienteRepository.save(cliente);
@@ -33,6 +35,7 @@ public class ClienteService {
 		return ResponseEntity.ok(clienteDto);
 	}
 
+	@Transactional
 	public ResponseEntity<ClienteDto> atualizarCliente(Long id, @Valid ClienteDto clienteDto) {
 		var clienteOp = clienteRepository.findById(id);
 		if (!clienteOp.isPresent())
@@ -50,14 +53,13 @@ public class ClienteService {
 	public Page<ClienteDto> consultarClientes(Pageable pag) {
 		return clienteRepository.findAll(pag).map(ClienteDto::new);
 	}
-
+	
 	public ResponseEntity<List<ClienteDto>> consultarCliente(String nome) {
 		var listaNomes = clienteRepository.findAllByNome(nome);
 		if (listaNomes.isEmpty())
 			ResponseEntity.notFound().build();
 
-		return ResponseEntity
-				.ok(clienteRepository.findAllByNome(nome).stream().map(ClienteDto::new).toList());
+		return ResponseEntity.ok(clienteRepository.findAllByNome(nome).stream().map(ClienteDto::new).toList());
 	}
 
 	public ResponseEntity<ClienteDto> consultarCliente(Long id) {

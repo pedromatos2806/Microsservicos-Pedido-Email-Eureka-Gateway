@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<item key="filters_last_used" value="filter_imports;"/>
 	<section name="completion_proposal_size">
+		<item key="contextSelector.size.x" value="327"/>
+		<item key="contextSelector.size.y" value="198"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
